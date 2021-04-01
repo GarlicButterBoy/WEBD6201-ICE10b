@@ -210,7 +210,7 @@ namespace core
         
       switch (pageID) {
         case 'edit':
-          displayEdit();
+          displ
           break;
         case 'contact':
           displayContact();

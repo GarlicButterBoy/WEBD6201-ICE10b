@@ -209,9 +209,9 @@ namespace core
         let pageID = $("body")[0].getAttribute("id");
         
       switch (pageID) {
-        case 'edit':
-          displayEdit();
+        case 'home':
           break;
+        
         case 'contact':
           displayContact();
           break;

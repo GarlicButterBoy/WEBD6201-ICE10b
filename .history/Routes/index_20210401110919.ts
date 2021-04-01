@@ -163,16 +163,14 @@ router.get('/delete/:id', function(req, res, next)
 {
   let id = req.params.id;
 
-  
   Contact.remove({_id:id}, (err) => {
     if(err)
     {
       console.error(err);
       res.end(err);
     }
-    res.redirect('/contact-list');
   });
 
-  
+  res.redirect('/contact-list');
 });
 //module.exports = router;
