@@ -113,21 +113,10 @@ router.post('/edit/:id', function(req, res, next)
 
   //instantiate a new contact
   let updatedContact = new Contact({
-    "_id": id,
-    "FullName": req.body.FullName,
-    "ContactNumber": req.body.ContactNumber,
-    "EmailAddress": req.body.EmailAddress
-  });
+    "_id"
+  })
 
-  Contact.updateOne({_id: id}, updatedContact, {}, (err) => {
-    if(err)
-    {
-      console.error(err);
-      res.end(err);
-    }
-
-    res.redirect('/contact-list');
-  });
+  res.redirect('/contact-list');
 });
 
 /* GET add page - with /add */

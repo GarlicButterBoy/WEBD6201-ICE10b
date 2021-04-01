@@ -128,6 +128,8 @@ router.post('/edit/:id', function(req, res, next)
 
     res.redirect('/contact-list');
   });
+
+  
 });
 
 /* GET add page - with /add */

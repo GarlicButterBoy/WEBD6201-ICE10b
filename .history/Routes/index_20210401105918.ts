@@ -119,15 +119,9 @@ router.post('/edit/:id', function(req, res, next)
     "EmailAddress": req.body.EmailAddress
   });
 
-  Contact.updateOne({_id: id}, updatedContact, {}, (err) => {
-    if(err)
-    {
-      console.error(err);
-      res.end(err);
-    }
+  Contact.updateOne({_id: id}, updatedContact, {}, )
 
-    res.redirect('/contact-list');
-  });
+  res.redirect('/contact-list');
 });
 
 /* GET add page - with /add */

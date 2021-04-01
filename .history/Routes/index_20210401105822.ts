@@ -115,19 +115,11 @@ router.post('/edit/:id', function(req, res, next)
   let updatedContact = new Contact({
     "_id": id,
     "FullName": req.body.FullName,
-    "ContactNumber": req.body.ContactNumber,
-    "EmailAddress": req.body.EmailAddress
-  });
+    "ContactNumber": req.body.C
 
-  Contact.updateOne({_id: id}, updatedContact, {}, (err) => {
-    if(err)
-    {
-      console.error(err);
-      res.end(err);
-    }
+  })
 
-    res.redirect('/contact-list');
-  });
+  res.redirect('/contact-list');
 });
 
 /* GET add page - with /add */

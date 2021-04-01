@@ -88,46 +88,15 @@ router.get('/contact-list', function(req, res, next)
 /* GET edit/:id page - with /edit/:id */
 router.get('/edit/:id', function(req, res, next) 
 {
-  let id = req.params.id;
+  let
 
-  //pass the id to the db
-  //db.contacts.find({"_id": id});
-  Contact.findById(id, {}, {}, (err, contactToEdit) => {
-    if(err)
-    {
-      console.error(err);
-      res.end(err);
-    }
-    //show the edit view
-    res.render('index', { title: 'Edit', page: 'edit', contact: contactToEdit, displayName: ''    });
-
-  });
-
-  
+  res.render('index', { title: 'Edit', page: 'edit', displayName: ''    });
 });
 
 /* POST edit/:id page - with /edit/:id */
 router.post('/edit/:id', function(req, res, next) 
 {
-  let id = req.params.id;
-
-  //instantiate a new contact
-  let updatedContact = new Contact({
-    "_id": id,
-    "FullName": req.body.FullName,
-    "ContactNumber": req.body.ContactNumber,
-    "EmailAddress": req.body.EmailAddress
-  });
-
-  Contact.updateOne({_id: id}, updatedContact, {}, (err) => {
-    if(err)
-    {
-      console.error(err);
-      res.end(err);
-    }
-
-    res.redirect('/contact-list');
-  });
+  res.redirect('/contact-list');
 });
 
 /* GET add page - with /add */
