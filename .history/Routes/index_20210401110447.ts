@@ -119,7 +119,6 @@ router.post('/edit/:id', function(req, res, next)
     "EmailAddress": req.body.EmailAddress
   });
 
-  //db.contacts.update({"_id": id})
   Contact.updateOne({_id: id}, updatedContact, {}, (err) => {
     if(err)
     {
@@ -142,20 +141,14 @@ router.post('/add', function(req, res, next)
 {
   //instantiate a new contact
   let newContact = new Contact({
+    "_id": id,
     "FullName": req.body.FullName,
     "ContactNumber": req.body.ContactNumber,
     "EmailAddress": req.body.EmailAddress
   });
 
 
-  Contact.create(newContact, (err) => {
-    if(err)
-    {
-      console.error(err);
-      res.end(err);
-    }
-    res.redirect('/contact-list');
-  });
+  res.redirect('/contact-list');
 });
 
 /* Process delete/:id page - with /delete/:id */

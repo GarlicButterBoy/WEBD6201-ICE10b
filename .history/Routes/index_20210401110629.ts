@@ -154,8 +154,11 @@ router.post('/add', function(req, res, next)
       console.error(err);
       res.end(err);
     }
-    res.redirect('/contact-list');
+    
   });
+
+
+  
 });
 
 /* Process delete/:id page - with /delete/:id */

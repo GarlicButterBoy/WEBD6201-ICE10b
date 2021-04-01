@@ -156,6 +156,9 @@ router.post('/add', function(req, res, next)
     }
     res.redirect('/contact-list');
   });
+
+
+  
 });
 
 /* Process delete/:id page - with /delete/:id */
